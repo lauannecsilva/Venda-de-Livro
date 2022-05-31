@@ -38,18 +38,7 @@ public class vendaLivro {
         return valor_total;
     }
 
-    // promoção compre 1 leve 2
-    public double promocao(int quantidadeLivro, double valorLivro){
-       
-
-        if(quantidadeLivro == 2){
-            desconto = (50 * valorLivro) / 100;
-            valor_total = valorLivro - desconto;
-        }
-
-        return valor_total;
-    }
-
+    
    
 
 }

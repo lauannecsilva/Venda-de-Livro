@@ -28,11 +28,6 @@ public void categoriaTeste(){
 
 }
 
-@Test
-public void promocaoTeste(){
-
-    Assert.assertEquals(10.00, livro.promocao(2, 20.00), delta);
 
 } 
 
-}
