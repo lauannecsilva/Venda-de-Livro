@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+#Um workflow chamando teste
+name: test
+
+
+#Será disparado toda vez que houver uma PR dentro da master
+on:
+  pull_request:
+    branches:
+    - master # executa nos pushes na master
+    - 'develop/**' # executa nas branches com prefixo `develop/`
+
+
+#Utilizará uma imagem do UBUNTU
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    #Fazer uma checagem, buscando o codigo mais recente
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+        - name: Download a Build Artifact
+         uses: actions/download-artifact@v3.0.0
+        with:
+             # Artifact name
+          name: # optional
+            # Destination path
+          path: # optional
