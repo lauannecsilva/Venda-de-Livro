@@ -9,7 +9,7 @@ on:
   pull_request:
     branches:
     - master # executa nos pushes na master
-    - develop #executa nos pushes na develop
+    - 'develop/**' # executa nas branches com prefixo `develop/`
 
 
 #Utilizará uma imagem do UBUNTU
