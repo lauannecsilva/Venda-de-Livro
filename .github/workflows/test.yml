@@ -8,7 +8,8 @@ name: test
 on:
   pull_request:
     branches:
-    - master # executa nos pushes na main
+    - master # executa nos pushes na master
+    - develop #executa nos pushes na develop
 
 
 #Utilizará uma imagem do UBUNTU
@@ -18,12 +19,10 @@ jobs:
 
     #Fazer uma checagem, buscando o codigo mais recente
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        - name: Download a Build Artifact
+         uses: actions/download-artifact@v3.0.0
+        with:
+             # Artifact name
+          name: # optional
+            # Destination path
+          path: # optional
