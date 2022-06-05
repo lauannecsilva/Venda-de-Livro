@@ -1,0 +1,29 @@
+# This is a basic workflow to help you get started with Actions
+
+#Um workflow chamando teste
+name: test
+
+
+#Será disparado toda vez que houver uma PR dentro da master
+on:
+  pull_request:
+    branches:
+    - master # executa nos pushes na main
+
+
+#Utilizará uma imagem do UBUNTU
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    #Fazer uma checagem, buscando o codigo mais recente
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
