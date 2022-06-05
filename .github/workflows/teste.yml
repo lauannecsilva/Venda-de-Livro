@@ -1,0 +1,28 @@
+name: Java Workflow 
+
+# configuramos para rodar apenas quando houver um push na master
+on:
+  push:
+    branches:
+      - master #toda vez que subir um PR na master
+      - 'develop/**' #toda vez que subir um PR na develop
+
+jobs:
+  # `build` é o nome do job
+  build:
+    # nome para exibir no repositório
+    name: Build, Test and Deploy
+
+    # utilizamos uma instância do windows como runner
+    runs-on: windows-latest
+
+    steps:
+      # utilizamos a action checkout para fazer o git clone no runner
+      - uses: actions/checkout@v2
+
+      # utilizamos a action setup-java para configurar a versão necessária do JDK 
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: 11
+          architecture: x64
